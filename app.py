@@ -320,7 +320,7 @@ if page == "📊 Dashboard":
                      labels={'x':'Stars','y':'Reviews'})
         fig.update_layout(showlegend=False, plot_bgcolor='white', paper_bgcolor='white',
                           font_family='DM Sans', margin=dict(t=10,b=10))
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
     with col_r:
         st.subheader("Sentiment Distribution")
@@ -330,7 +330,7 @@ if page == "📊 Dashboard":
                           color_discrete_map={'positive':C['positive'],'neutral':C['neutral'],'negative':C['negative']},
                           hole=0.48)
             fig2.update_layout(font_family='DM Sans', margin=dict(t=10,b=10), paper_bgcolor='white')
-            st.plotly_chart(fig2, use_container_width=True)
+            st.plotly_chart(fig2, width="stretch")
 
     st.subheader("Top Product per Category")
     top_per_cat = []
@@ -353,7 +353,7 @@ if page == "📊 Dashboard":
             })
 
     top_df = pd.DataFrame(top_per_cat)
-    st.dataframe(top_df, use_container_width=True, hide_index=True)
+    st.dataframe(top_df, width="stretch", hide_index=True)
 
 # ══════════════════════════════════════════════════════════════
 # PAGE 2 — TOP PRODUCTS
@@ -596,6 +596,6 @@ elif page == "📝 Add Review":
                          color_discrete_map={'positive':C['positive'],'neutral':C['neutral'],'negative':C['negative']},
                          hole=0.48)
             fig.update_layout(margin=dict(t=0,b=0), paper_bgcolor='rgba(0,0,0,0)', font_family='DM Sans')
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
         else:
             st.info("No reviews added yet. Submit your first review on the left!")

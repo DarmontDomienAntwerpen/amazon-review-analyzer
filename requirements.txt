@@ -37,4 +37,4 @@ rouge-score>=0.1.2
 ollama>=0.1.0
 
 # Deployment
-streamlit>=1.28.0
+streamlit>=1.50.0

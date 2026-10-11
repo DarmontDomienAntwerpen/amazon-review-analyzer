@@ -1,5 +1,21 @@
-data/
-model/
-.DS_Store
+# Secrets
+.env
+
+# Python
+.venv/
+venv/
 __pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
 .ipynb_checkpoints/
+
+# Editor / OS / tooling
+.DS_Store
+.claude/
+CLAUDE.md
+
+# Project-specific: raw Kaggle data and the fine-tuned model are too large for git
+data/raw/
+data/finetuned_model/
+model/
