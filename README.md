@@ -74,7 +74,7 @@ Streamlit app
 
 ### Installation
 ```bash
-git clone https://github.com/DarmontDomienAntwerpen/amazon-review-analyzer.git
+git clone https://github.com/DomienDarmontAntwerpen/amazon-review-analyzer.git
 cd amazon-review-analyzer
 python3 -m venv .venv
 source .venv/bin/activate
@@ -116,4 +116,4 @@ Completed project, working end to end. A possible next step is publishing the fi
 
 ## Author
 **Domien Darmont**, AI Engineer, Antwerp, Belgium
-GitHub: [@DarmontDomienAntwerpen](https://github.com/DarmontDomienAntwerpen)
+GitHub: [@DomienDarmontAntwerpen](https://github.com/DomienDarmontAntwerpen)
