@@ -115,8 +115,11 @@ amazon-review-analyzer/
 Completed project, working end to end. A possible next step is publishing the fine-tuned model on the Hugging Face Hub, so the app no longer needs the fallback model.
 
 ## Author
-**Domien Darmont**, AI Engineer, Antwerp, Belgium
-GitHub: [@DomienDarmontAntwerpen](https://github.com/DomienDarmontAntwerpen)
+**Domien Darmont**, AI Engineer, Antwerp, Belgium  
+GitHub: [@DomienDarmontAntwerpen](https://github.com/DomienDarmontAntwerpen)  
+LinkedIn: [Domien Darmont](https://www.linkedin.com/in/domien-darmont-b53b7640b/)
+
+A live demo or more information is available on request.
 
 ## License
 © 2026 Domien Darmont. All rights reserved.
