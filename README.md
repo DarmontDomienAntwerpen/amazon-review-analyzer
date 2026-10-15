@@ -19,7 +19,7 @@
 
 ## What it does
 
-- **Sentiment classification**: a fine-tuned BERT model labels every review (79.4% accuracy, up from 77.0% for the base model).
+- **Sentiment classification**: a fine-tuned BERT model labels every review (79.4% accuracy on a balanced test set of 900 reviews, 300 per class, up from 77.0% for the base model).
 - **Product clustering**: `all-mpnet-base-v2` embeddings and KMeans group the products into 5 categories.
 - **Summarisation**: Llama 3.2 (3B, running locally through Ollama) writes a buyer's-guide article per category, evaluated with ROUGE.
 - **Web app** with four pages: a dashboard, top products per category, a live classifier, and "add a review" (classified in real time).
@@ -51,9 +51,11 @@ Streamlit app
 
 | Component | Model | Result |
 |---|---|---|
-| Classification | `nlptown/bert-base-multilingual-uncased-sentiment`, fine-tuned | Accuracy 79.4%, F1 positive 0.87 / negative 0.82 / neutral 0.69 |
+| Classification | `nlptown/bert-base-multilingual-uncased-sentiment`, fine-tuned | Accuracy 79.4% (macro-F1 0.79), F1 positive 0.82 / negative 0.87 / neutral 0.69 |
 | Clustering | `all-mpnet-base-v2` + KMeans (k = 5) | Silhouette 0.343 |
 | Summarisation | Llama 3.2 3B (Ollama) | Average ROUGE-1 0.28 |
+
+The classifier is evaluated on a balanced test set (300 reviews per class), so accuracy is not inflated by the large share of positive reviews in the data.
 
 ## Tech stack
 
@@ -107,7 +109,6 @@ amazon-review-analyzer/
 │   └── 04_summarization.ipynb
 ├── data/processed/        # Pipeline output used by the app
 ├── docs/images/           # Screenshots
-├── blog_articles.csv      # Generated buyer's-guide articles
 └── requirements.txt
 ```
 
