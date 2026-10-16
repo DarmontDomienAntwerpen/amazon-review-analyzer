@@ -53,7 +53,7 @@ Streamlit app
 |---|---|---|
 | Classification | `nlptown/bert-base-multilingual-uncased-sentiment`, fine-tuned | Accuracy 79.4% (macro-F1 0.79), F1 positive 0.82 / negative 0.87 / neutral 0.69 |
 | Clustering | `all-mpnet-base-v2` + KMeans (k = 5) | Silhouette 0.343 |
-| Summarisation | Llama 3.2 3B (Ollama) | Average ROUGE-1 0.28 |
+| Summarisation | Llama 3.2 3B (Ollama) | Average ROUGE-1 0.28 (mean of the five categories in `data/processed/rouge_scores.csv`; the ROUGE cells in `04_summarization.ipynb` are not executed in the committed version) |
 
 The classifier is evaluated on a balanced test set (300 reviews per class), so accuracy is not inflated by the large share of positive reviews in the data.
 
@@ -84,7 +84,7 @@ pip install -r requirements.txt
 ```
 
 ### Configuration
-No API keys are needed. The processed data is included in `data/processed/`, so the app runs straight away. If the fine-tuned model is missing, the app falls back to the base BERT model, which it downloads automatically on first start.
+No API keys are needed. The processed data is included in `data/processed/`, so the app runs straight away. The fine-tuned weights are not included in this repo (`data/finetuned_model/` is gitignored because of its size), so out of the box the app's live classifier runs on the base model `nlptown/bert-base-multilingual-uncased-sentiment`, which it downloads automatically on first start. It uses the fine-tuned model only if you first run notebook 02b, which saves it to `data/finetuned_model/bert_sentiment_finetuned`.
 
 ### Run
 ```bash
